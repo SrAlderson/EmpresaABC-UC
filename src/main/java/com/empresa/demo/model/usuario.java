@@ -1,4 +1,4 @@
-package com.empresa.demo.modelo;
+package com.empresa.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,28 +6,32 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-//Librerias
+//Librerias para la base de datos
 
 @Entity
 @Table(name="usuario")
 
-public class Usuario {
+public class usuario {
     //Atributos del usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID
     private int id; 
-    private String nombre; 
-    private String apellido; 
+    private String primerNombre; 
+    private String segundoNombre;
+    private String primerApellido;
+    private String segundoApellido;
     private String direccion;
     private String correo;
     private int cedula;
 
     //Generacion del Metodo constructor
 
-    public Usuario(String nombre, String apellido, String direccion, String correo, int cedula){
+    public usuario(String primerNombre, String segundoNombre,  String primerApellido, String segundoApellido,  String direccion, String correo, int cedula){
         super();
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.primerNombre = primerNombre;
+        this.segundoNombre = segundoNombre;
+        this.primerApellido = primerApellido;
+        this.segundoApellido = segundoApellido;
         this.direccion = direccion;
         this.correo = correo;
         this.cedula = cedula;
@@ -38,10 +42,16 @@ public class Usuario {
         return id;
     }
     public String getNombre(){
-        return nombre;
+        return primerNombre;
+    }
+    public String getNombre2(){
+        return segundoNombre;
     }
     public String getApellido(){
-        return apellido;
+        return primerApellido;
+    }
+    public String getApellido2(){
+        return segundoApellido;
     }
     public String getDireccion(){
         return direccion;
@@ -52,15 +62,22 @@ public class Usuario {
     public int getCedula(){
         return cedula;
     }
+
     //Generacion de Set
     public void setId(int id){
         this.id = id;
     }
-    public void setNombre(String nombre){
-        this.nombre = nombre; 
+    public void setNombre(String primerNombre){
+        this.primerNombre = primerNombre; 
     }
-    public void setApellido(String apellido){
-        this.apellido = apellido;
+    public void setNombre2(String segundoNombre){
+        this.segundoNombre = segundoNombre;
+    }
+    public void setApellido(String primerApellido){
+        this.primerApellido = primerApellido;
+    }
+    public void setApellido2 (String segundoApellido){
+        this.segundoApellido = segundoApellido;
     }
     public void setDireccion (String direcccion){
         this.direccion = direcccion;
@@ -72,3 +89,4 @@ public class Usuario {
         this.cedula = cedula;
     }
 }
+
