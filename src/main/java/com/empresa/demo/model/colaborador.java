@@ -19,79 +19,83 @@ public class colaborador {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
 
-    private int colab_id;
-    private int usu_cedula;
+    private int id;
+    private int cedula;
     private int idCPE;
-    private String colab_correo;  
-    private String colab_usuario;
+    private String correocorporativo;  
+    private String usuariored;
 
+    
     //Creacion de la conexion de la tala <cargo_perfil - perfil>
     @ManyToOne
     @JoinColumn
-    private cargoperfil cargoperfil;
+    private cargoper cargoper;
 
     //Creacion de la conexion de la tala <cargo_perfil - perfil>
     @ManyToOne
     @JoinColumn
     private usuario usuario;
 
+    //Creacion del metodo contructor vacio
+     public colaborador(){
+        
+     }
     //Creacion del metodo constructor
-    public colaborador(int colab_id, int usu_cedula, int idCPE, String colab_correo, String colab_usuario, cargoperfil cargoperfil, usuario usuario){
+    public colaborador(int id, int cedula, int idCPE, String correocorporativo, String usuariored, cargoper cargoper, usuario usuario){
         super();
-        this.colab_id = colab_id;
-        this.usu_cedula = usu_cedula;
+        this.id = id;
+        this.cedula = cedula;
         this.idCPE = idCPE;
-        this.colab_correo = colab_correo;
-        this.colab_usuario = colab_usuario;
+        this.correocorporativo = correocorporativo;
+        this.usuariored = usuariored;
         this.usuario = usuario;
-        this.cargoperfil = cargoperfil;
+        this.cargoper = cargoper;
     }
 
     //Creacion de los metodos Get y Set
 
     //Getters
-    public int getId(){
-        return colab_id;
+    public int getId() {
+        return id;
     }
-    public int getUsuCedula(){
-        return usu_cedula;
+    public int getCedula() {
+        return cedula;
     }
-    public int getIdCPE (){
+    public int getIdCPE() {
         return idCPE;
     }
-    public String getCorreo (){
-        return colab_correo;
+    public String getCorreocorporativo() {
+        return correocorporativo;
     }
-    public String getUsuario (){
-        return colab_usuario;
+    public String getUsuariored() {
+        return usuariored;
     }
-    public usuario usuario (){
+    public cargoper getCargoperfil() {
+        return cargoper;
+    }
+    public usuario getUsuario() {
         return usuario;
     }
-    public cargoperfil cargoPerfil (){
-        return cargoperfil;
-    }
-
     //Setters
-    public void setId(int colab_id){
-        this.colab_id = colab_id;
+    public void setId(int id) {
+        this.id = id;
     }
-    public void setUsuCedula (int usu_cedula){
-        this.usu_cedula = usu_cedula;
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
     }
-    public void setIdCPE (int idCPE){
+    public void setIdCPE(int idCPE) {
         this.idCPE = idCPE;
     }
-    public void setCorreo (String colab_correo){
-        this.colab_correo = colab_correo;
+    public void setCorreocorporativo(String correocorporativo) {
+        this.correocorporativo = correocorporativo;
     }
-    public void setUsuario (String colab_usuario){
-        this.colab_usuario = colab_usuario;
+    public void setUsuariored(String usuariored) {
+        this.usuariored = usuariored;
     }
-    public void setUsuario1 (usuario usuario){
-        this.usuario =usuario;
+    public void setCargoperfil(cargoper cargoper) {
+        this.cargoper = cargoper;
     }
-    public void setCargoPerfil(cargoperfil cargoperfil){
-        this.cargoperfil = cargoperfil;
+    public void setUsuario(usuario usuario) {
+        this.usuario = usuario;
     }
 }

@@ -35,7 +35,7 @@ public class CargoService implements CargoRepository {
         List<cargo> car = cargoRepository.findAll();
 
         for (int i=0; i<car.size(); i++){
-            if(car.get(i).getIdCargo()==id){
+            if(car.get(i).getId()==id){
                 cargoRespuesta.add(car.get(i));
             }
         }

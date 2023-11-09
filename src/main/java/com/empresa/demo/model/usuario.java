@@ -16,78 +16,99 @@ public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID
 
-    private int usu_id; 
-    private String usu_primerNombre;                                                                    
-    private String usu_segundoNombre;
-    private String usu_primerApellido;
-    private String usu_segundoApellido;
-    private String usu_direccion;
-    private String usu_correo;  
-    private int usu_cedula;
+    private int id; 
+    private String nombre;                                                                    
+    private String nombre1;
+    private String apellido;
+    private String apellido2;
+    private String direccion;
+    private String correo;  
+    private int cedula;
+
+    //Creacion del metodo contructor vacio
+    public usuario(){
+        
+    }
 
     //Generacion del Metodo constructor
-    public usuario(String usu_primerNombre, String usu_segundoNombre,  String usu_primerApellido, String usu_segundoApellido,  String usu_direccion, String usu_correo, int usu_cedula){
-        super();
-        this.usu_primerNombre = usu_primerNombre;
-        this.usu_segundoNombre = usu_segundoNombre;
-        this.usu_primerApellido = usu_primerApellido;
-        this.usu_segundoApellido = usu_segundoApellido;
-        this.usu_direccion = usu_direccion;
-        this.usu_correo = usu_correo;
-        this.usu_cedula = usu_cedula;
+    public usuario(int id, String nombre, String nombre1, String apellido, String apellido2, String direccion, String correo, int cedula) {
+        this.id = id;
+        this.nombre = nombre;
+        this.nombre1 = nombre1;
+        this.apellido = apellido;
+        this.apellido2 = apellido2;
+        this.direccion = direccion;
+        this.correo = correo;
+        this.cedula = cedula;
     }
 
-    //Generacion de Get
-    public int getId(){
-        return usu_id;
-    }
-    public String getNombre(){
-        return usu_primerNombre;
-    }
-    public String getNombre2(){
-        return usu_segundoNombre;
-    }
-    public String getApellido(){
-        return usu_primerApellido;
-    }
-    public String getApellido2(){
-        return usu_segundoApellido;
-    }
-    public String getDireccion(){
-        return usu_direccion;
-    }
-    public String getCorreo(){
-        return usu_correo;
-    }
-    public int getCedula(){
-        return usu_cedula;
-    }
-    
+    //Metodos Getters y Setters
 
-    //Generacion de Set
-    public void setId(int usu_id){
-        this.usu_id = usu_id;
+    //Metodos Get
+    public int getId() {
+        return id;
     }
-    public void setNombre(String usu_primerNombre){
-        this.usu_primerNombre = usu_primerNombre; 
+
+    public String getNombre() {
+        return nombre;
     }
-    public void setNombre2(String usu_segundoNombre){
-        this.usu_segundoNombre = usu_segundoNombre;
+
+    public String getNombre1() {
+        return nombre1;
     }
-    public void setApellido(String usu_primerApellido){
-        this.usu_primerApellido = usu_primerApellido;
+
+    public String getApellido() {
+        return apellido;
     }
-    public void setApellido2 (String usu_segundoApellido){
-        this.usu_segundoApellido = usu_segundoApellido;
+
+    public String getApellido2() {
+        return apellido2;
     }
-    public void setDireccion (String usu_direcccion){
-        this.usu_direccion = usu_direcccion;
+
+    public String getDireccion() {
+        return direccion;
     }
-    public void setCorreo(String usu_correo){
-        this.usu_correo = usu_correo;
+
+    public String getCorreo() {
+        return correo;
     }
-    public void setCedula (int usu_cedula){
-        this.usu_cedula = usu_cedula;
+
+    public int getCedula() {
+        return cedula;
+    }
+
+    //Metodos Set
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setNombre1(String nombre1) {
+        this.nombre1 = nombre1;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setCedula(int cedula) {
+        this.cedula = cedula;
     }
         
 }

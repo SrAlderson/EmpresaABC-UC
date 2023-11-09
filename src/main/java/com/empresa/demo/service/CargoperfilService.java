@@ -13,7 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.empresa.demo.model.cargoperfil;
+import com.empresa.demo.model.cargoper;
 import com.empresa.demo.repositorio.CargoPerfilRepository;
 
 @Service
@@ -25,17 +25,17 @@ public class CargoperfilService implements CargoPerfilRepository{
     //------------------------------- Metodos modificados ---------------------------------------------
     //Metodo modificado
     @Override
-    public List<cargoperfil> findAll() {
+    public List<cargoper> findAll() {
         
         
         return cargoPerfilRepository.findAll();
     }
 
     //Como es metodo propio no va con @Override
-    public List<cargoperfil> findAllByIdCPE(int idCPE){
+    public List<cargoper> findAllByIdCPE(int idCPE){
         //Creacion de listas
-        List<cargoperfil> carpRespuesta = new ArrayList<>(); 
-        List<cargoperfil> carp = cargoPerfilRepository.findAll();
+        List<cargoper> carpRespuesta = new ArrayList<>(); 
+        List<cargoper> carp = cargoPerfilRepository.findAll();
 
         //Busqueda y separacion 
         for (int i=0 ; i<carp.size(); i++){
@@ -61,19 +61,19 @@ public class CargoperfilService implements CargoPerfilRepository{
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<cargoperfil> entities) {
+    public void deleteAllInBatch(Iterable<cargoper> entities) {
         // TODO Auto-generated method stub
         
     }
 
     @Override
-    public <S extends cargoperfil> List<S> findAll(Example<S> example) {
+    public <S extends cargoper> List<S> findAll(Example<S> example) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends cargoper> List<S> findAll(Example<S> example, Sort sort) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -85,31 +85,31 @@ public class CargoperfilService implements CargoPerfilRepository{
     }
 
     @Override
-    public cargoperfil getById(Integer id) {
+    public cargoper getById(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public cargoperfil getOne(Integer id) {
+    public cargoper getOne(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public cargoperfil getReferenceById(Integer id) {
+    public cargoper getReferenceById(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public <S extends cargoper> List<S> saveAllAndFlush(Iterable<S> entities) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> S saveAndFlush(S entity) {
+    public <S extends cargoper> S saveAndFlush(S entity) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -117,13 +117,13 @@ public class CargoperfilService implements CargoPerfilRepository{
     
 
     @Override
-    public List<cargoperfil> findAllById(Iterable<Integer> ids) {
+    public List<cargoper> findAllById(Iterable<Integer> ids) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> List<S> saveAll(Iterable<S> entities) {
+    public <S extends cargoper> List<S> saveAll(Iterable<S> entities) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -135,7 +135,7 @@ public class CargoperfilService implements CargoPerfilRepository{
     }
 
     @Override
-    public void delete(cargoperfil entity) {
+    public void delete(cargoper entity) {
         // TODO Auto-generated method stub
         
     }
@@ -147,7 +147,7 @@ public class CargoperfilService implements CargoPerfilRepository{
     }
 
     @Override
-    public void deleteAll(Iterable<? extends cargoperfil> entities) {
+    public void deleteAll(Iterable<? extends cargoper> entities) {
         // TODO Auto-generated method stub
         
     }
@@ -171,55 +171,55 @@ public class CargoperfilService implements CargoPerfilRepository{
     }
 
     @Override
-    public Optional<cargoperfil> findById(Integer id) {
+    public Optional<cargoper> findById(Integer id) {
         // TODO Auto-generated method stub
         return Optional.empty();
     }
 
     @Override
-    public <S extends cargoperfil> S save(S entity) {
+    public <S extends cargoper> S save(S entity) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public List<cargoperfil> findAll(Sort sort) {
+    public List<cargoper> findAll(Sort sort) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Page<cargoperfil> findAll(Pageable pageable) {
+    public Page<cargoper> findAll(Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> long count(Example<S> example) {
+    public <S extends cargoper> long count(Example<S> example) {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public <S extends cargoperfil> boolean exists(Example<S> example) {
+    public <S extends cargoper> boolean exists(Example<S> example) {
         // TODO Auto-generated method stub
         return false;
     }
 
     @Override
-    public <S extends cargoperfil> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public <S extends cargoper> Page<S> findAll(Example<S> example, Pageable pageable) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
+    public <S extends cargoper, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public <S extends cargoperfil> Optional<S> findOne(Example<S> example) {
+    public <S extends cargoper> Optional<S> findOne(Example<S> example) {
         // TODO Auto-generated method stub
         return Optional.empty();
     }

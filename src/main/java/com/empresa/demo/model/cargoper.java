@@ -13,15 +13,15 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="cargoperfil")
 
-public class cargoperfil {
+public class cargoper {
     
     //Atributos del usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
 
     private int idCPE;
-    private String p_nombre;
-    private String c_nombre;   
+    private String nombreperfil;
+    private String nombrecargo;   
 
     //Creacion de la conexion de la tala <cargo_perfil - perfil>
     @ManyToOne
@@ -33,48 +33,60 @@ public class cargoperfil {
     @JoinColumn
     private cargo cargo;
 
+    //Creacion del metodo constructor vacio
+    public cargoper(){
+
+    }
+
     //Creacion del metodo constructor
-    public cargoperfil (int idCPE, String p_nombre, String c_nombre, perfil perfil, cargo cargo){
-        super();
+    public cargoper(int idCPE, String nombreperfil, String nombrecargo, com.empresa.demo.model.perfil perfil, com.empresa.demo.model.cargo cargo) {
         this.idCPE = idCPE;
-        this.c_nombre = c_nombre;
-        this.p_nombre = p_nombre;
+        this.nombreperfil = nombreperfil;
+        this.nombrecargo = nombrecargo;
         this.perfil = perfil;
         this.cargo = cargo;
     }
-
     //Creacion de los metodos Getter y Setter
     //Getter
-    public int getIdCPE (){
+    
+    public int getIdCPE() {
         return idCPE;
     }
-    public String getPNombre (){
-        return p_nombre;
+
+    public String getNombreperfil() {
+        return nombreperfil;
     }
-    public String getCNombre (){
-        return c_nombre;
+
+    public String getNombrecargo() {
+        return nombrecargo;
     }
-    public perfil perfil (){
+
+    public perfil getPerfil() {
         return perfil;
     }
-    public cargo cargo (){
+
+    public cargo getCargo() {
         return cargo;
     }
 
-    //Setter
-    public void setIdCPE (int idCPE){
+    //Setters
+    public void setIdCPE(int idCPE) {
         this.idCPE = idCPE;
     }
-    public void setCNombre (String p_nombre){
-        this.p_nombre = p_nombre;
+
+    public void setNombreperfil(String nombreperfil) {
+        this.nombreperfil = nombreperfil;
     }
-    public void setPNombre (String c_nombre){
-        this.c_nombre=c_nombre;
+
+    public void setNombrecargo(String nombrecargo) {
+        this.nombrecargo = nombrecargo;
     }
-    public void setPerfil (perfil perfil)    {
+
+    public void setPerfil(perfil perfil) {
         this.perfil = perfil;
     }
-    public void setCargo (cargo cargo){
+
+    public void setCargo(cargo cargo) {
         this.cargo = cargo;
     }
 }

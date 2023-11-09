@@ -16,48 +16,58 @@ public class cargo {
     //Atributos del usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
-    private int c_idCargo; 
-    private String c_nombre;
-    private String c_area;
-    private String c_gerencia;
+    private int id; 
+    private String cargonombre;
+    private String area;
+    private String gerencia;
 
+    //Creacion del metodo contructor vacio
+     public cargo(){
+        
+    }
+        
     //Generacion del Metodo Constructor
-    public cargo (int c_idCargo, String c_nombre, String c_area, String c_gerencia){
-        super();
-        this.c_idCargo = c_idCargo;
-        this.c_nombre = c_nombre;
-        this.c_area = c_area;
-        this.c_gerencia = c_gerencia;
+    public cargo(int id, String cargonombre, String area, String gerencia) {
+        this.id = id;
+        this.cargonombre = cargonombre;
+        this.area = area;
+        this.gerencia = gerencia;
     }
 
     //Generacion de los metodos Get y Set
 
-    // Getters
-    public int getIdCargo(){
-        return c_idCargo;
-    }
-    public String getNombre(){
-        return c_nombre;
-    }
-    public String getArea(){
-        return c_area;
-    }
-    public String getGerencia(){
-        return c_gerencia;
+    //Getters
+    public int getId() {
+        return id;
     }
 
-    // Setters 
-    public void setIdCargo (int c_idCargo){
-        this.c_idCargo = c_idCargo;
+    public String getCargonombre() {
+        return cargonombre;
     }
-    public void setNombre (String c_nombre){
-        this.c_nombre = c_nombre;
+
+    public String getArea() {
+        return area;
     }
-    public void setArea (String c_area){
-        this.c_area = c_area;
+
+    public String getGerencia() {
+        return gerencia;
     }
-    public void setGerencia (String c_gerencia){
-        this.c_gerencia = c_gerencia;
+
+    //Setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setCargonombre(String cargonombre) {
+        this.cargonombre = cargonombre;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public void setGerencia(String gerencia) {
+        this.gerencia = gerencia;
     }
 
 }

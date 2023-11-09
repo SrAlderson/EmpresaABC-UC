@@ -16,40 +16,48 @@ public class perfil {
     //Atributos del usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
-    private int p_idPerfil; 
-    private String p_nombre;
-    private String p_rol;
+    private int id; 
+    private String nombre;
+    private String rol;
     
+    //Creacion del metodo contructor vacio
+    public perfil(){
+        
+    }
+
     //Creacion del metodo constructor
-    public perfil (int p_idPerfil, String p_nombre, String p_rol){
-        super();
-        this.p_idPerfil = p_idPerfil;
-        this.p_nombre = p_nombre;
-        this.p_rol = p_rol;
+    public perfil(int id, String nombre, String rol) {
+        this.id = id;
+        this.nombre = nombre;
+        this.rol = rol;
     }
 
     //Creacion de los metodos Get y Set
-
     //Getters
-    public int getIdCargo (){
-        return p_idPerfil;
+
+    public int getId() {
+        return id;
     }
-    public String getNombre (){
-        return p_nombre;
+
+    public String getNombre() {
+        return nombre;
     }
-    public String getRol (){
-        return p_rol;
+
+    public String getRol() {
+        return rol;
     }
-    
+
     //Setters
-    public void setIdCargo (int p_idPerfil){
-        this.p_idPerfil=p_idPerfil;
+    public void setId(int id) {
+        this.id = id;
     }
-    public void setNombre (String p_nombre){
-        this.p_nombre=p_nombre;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
-    public void setRol (String p_rol){
-        this.p_rol=p_rol;
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
     
 }
