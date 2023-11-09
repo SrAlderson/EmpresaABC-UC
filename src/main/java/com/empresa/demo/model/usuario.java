@@ -88,5 +88,7 @@ public class usuario {
     public void setCedula (int cedula){
         this.cedula = cedula;
     }
+
+    // Creacion de la conexion con la base de datos
 }
 
