@@ -21,6 +21,21 @@ public class PerfilService implements PerfilRepository{
     @Autowired
     private PerfilRepository perfilRepository;
 
+     //------------------------------- Metodos modificados ---------------------------------------------
+    //Metodo Modificado
+    @Override
+    public List<perfil> findAll() {
+        
+        return perfilRepository.findAll();
+    }
+
+    @Override
+    public <S extends perfil> S save(S entity) {
+        
+        return perfilRepository.save(entity);
+    }
+
+     //------------------------------- Metodos no modificados ---------------------------------------------
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
         // TODO Auto-generated method stub
@@ -87,12 +102,7 @@ public class PerfilService implements PerfilRepository{
         return null;
     }
 
-    //Metodo Modificado
-    @Override
-    public List<perfil> findAll() {
-        
-        return perfilRepository.findAll();
-    }
+    
 
     @Override
     public List<perfil> findAllById(Iterable<Integer> ids) {
@@ -154,11 +164,7 @@ public class PerfilService implements PerfilRepository{
         return Optional.empty();
     }
 
-    @Override
-    public <S extends perfil> S save(S entity) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    
 
     @Override
     public List<perfil> findAll(Sort sort) {

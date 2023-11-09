@@ -42,6 +42,12 @@ public class CargoService implements CargoRepository {
         return cargoRespuesta;
     }
 
+    @Override
+    public <S extends cargo> S save(S entity) {
+        
+        return cargoRepository.save(entity);
+    }
+
     //------------------------------- Metodos no modificados ------------------------------------------
 
     @Override
@@ -172,11 +178,7 @@ public class CargoService implements CargoRepository {
         return Optional.empty();
     }
 
-    @Override
-    public <S extends cargo> S save(S entity) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    
 
     @Override
     public List<cargo> findAll(Sort sort) {
