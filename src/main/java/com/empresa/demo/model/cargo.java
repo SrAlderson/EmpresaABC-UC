@@ -3,6 +3,7 @@ package com.empresa.demo.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 //Librerias para la base de datos
@@ -11,8 +12,9 @@ import jakarta.persistence.Table;
 @Table(name="cargo")
 
 public class cargo {
-
+    
     //Atributos del usuario
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
     private int c_idCargo; 
     private String c_nombre;
@@ -58,5 +60,4 @@ public class cargo {
         this.c_gerencia = c_gerencia;
     }
 
-    // Creacion de la conexion con la base de datos
 }

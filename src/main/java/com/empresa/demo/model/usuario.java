@@ -16,16 +16,15 @@ public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID
     private int usu_id; 
-    private String usu_primerNombre; 
+    private String usu_primerNombre;                                                                    
     private String usu_segundoNombre;
     private String usu_primerApellido;
     private String usu_segundoApellido;
     private String usu_direccion;
-    private String usu_correo;
+    private String usu_correo;  
     private int usu_cedula;
 
     //Generacion del Metodo constructor
-
     public usuario(String usu_primerNombre, String usu_segundoNombre,  String usu_primerApellido, String usu_segundoApellido,  String usu_direccion, String usu_correo, int usu_cedula){
         super();
         this.usu_primerNombre = usu_primerNombre;
@@ -62,6 +61,7 @@ public class usuario {
     public int getCedula(){
         return usu_cedula;
     }
+    
 
     //Generacion de Set
     public void setId(int usu_id){
@@ -88,7 +88,6 @@ public class usuario {
     public void setCedula (int usu_cedula){
         this.usu_cedula = usu_cedula;
     }
-
-    // Creacion de la conexion con la base de datos
+        
 }
 

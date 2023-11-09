@@ -3,6 +3,7 @@ package com.empresa.demo.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 //Librerias para la base de datos
@@ -13,6 +14,7 @@ import jakarta.persistence.Table;
 public class perfil {
     
     //Atributos del usuario
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID 
     private int p_idPerfil; 
     private String p_nombre;
@@ -38,7 +40,7 @@ public class perfil {
     public String getRol (){
         return p_rol;
     }
-
+    
     //Setters
     public void setIdCargo (int p_idPerfil){
         this.p_idPerfil=p_idPerfil;
@@ -49,7 +51,5 @@ public class perfil {
     public void setRol (String p_rol){
         this.p_rol=p_rol;
     }
-
-    // Creacion de la conexion con la base de datos
     
 }
