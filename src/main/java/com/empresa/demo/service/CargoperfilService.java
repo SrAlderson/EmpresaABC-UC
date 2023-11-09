@@ -1,5 +1,6 @@
 package com.empresa.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -21,6 +22,32 @@ public class CargoperfilService implements CargoPerfilRepository{
     @Autowired
     private CargoPerfilRepository cargoPerfilRepository;
 
+    //------------------------------- Metodos modificados ---------------------------------------------
+    //Metodo modificado
+    @Override
+    public List<cargoperfil> findAll() {
+        
+        
+        return cargoPerfilRepository.findAll();
+    }
+
+    //Como es metodo propio no va con @Override
+    public List<cargoperfil> findAllByIdCPE(int idCPE){
+        //Creacion de listas
+        List<cargoperfil> carpRespuesta = new ArrayList<>(); 
+        List<cargoperfil> carp = cargoPerfilRepository.findAll();
+
+        //Busqueda y separacion 
+        for (int i=0 ; i<carp.size(); i++){
+            //Pregunto por el valor buscado
+            if(carp.get(i).getIdCPE() == idCPE){
+                carpRespuesta.add(carp.get(i));
+            }
+        }
+        return carpRespuesta;
+    }
+
+    //------------------------------- Metodos no modificados ---------------------------------------------
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
         // TODO Auto-generated method stub
@@ -87,13 +114,7 @@ public class CargoperfilService implements CargoPerfilRepository{
         return null;
     }
 
-    //Metodo modificado
-    @Override
-    public List<cargoperfil> findAll() {
-        
-        
-        return cargoPerfilRepository.findAll();
-    }
+    
 
     @Override
     public List<cargoperfil> findAllById(Iterable<Integer> ids) {

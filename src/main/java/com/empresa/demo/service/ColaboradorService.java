@@ -21,6 +21,18 @@ public class ColaboradorService implements ColaboradorRepository {
     @Autowired
     private ColaboradorRepository colaboradorRepository;
 
+    //------------------------------- Metodos modificados ---------------------------------------------
+
+    //Metodo Modificado
+    @Override
+    public List<colaborador> findAll() {
+        
+        return colaboradorRepository.findAll();
+    }
+
+
+    //------------------------------- Metodos no modificados ---------------------------------------------
+
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
         // TODO Auto-generated method stub
@@ -87,12 +99,6 @@ public class ColaboradorService implements ColaboradorRepository {
         return null;
     }
 
-    //Metodo Modificado
-    @Override
-    public List<colaborador> findAll() {
-        
-        return colaboradorRepository.findAll();
-    }
 
     @Override
     public List<colaborador> findAllById(Iterable<Integer> ids) {

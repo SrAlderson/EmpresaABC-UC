@@ -21,6 +21,36 @@ public class UsuarioService implements UsuarioRepository{
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    //------------------------------- Metodos modificados ---------------------------------------------
+
+    //Metodo Modificado | Sirve para listar los datos registrados
+    @Override
+    public List<usuario> findAll() {
+        
+        return usuarioRepository.findAll();
+    }
+    
+     @Override
+    public <S extends usuario> S save(S entity) {
+        
+        return usuarioRepository.save(entity);
+    }
+
+    //Metodo modificado | Sirve para hacer la eliminacion de un dato
+    @Override
+    public void delete(usuario entity) {
+        usuarioRepository.delete(entity);
+        
+    }
+
+    //Metodo modificado | Sirve para hacer una eliminacion por ID
+    @Override
+    public void deleteById(Integer id) {
+        usuarioRepository.deleteAllById(null);        
+    }
+
+    //------------------------------- Metodos no modificados ---------------------------------------------
+
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
         // TODO Auto-generated method stub
@@ -87,12 +117,7 @@ public class UsuarioService implements UsuarioRepository{
         return null;
     }
 
-    //Metodo Modificado | Sirve para listar los datos registrados
-    @Override
-    public List<usuario> findAll() {
-        
-        return usuarioRepository.findAll();
-    }
+    
 
     @Override
     public List<usuario> findAllById(Iterable<Integer> ids) {
@@ -111,12 +136,7 @@ public class UsuarioService implements UsuarioRepository{
         // TODO Auto-generated method stub
         return 0;
     }
-    //Metodo modificado | Sirve para hacer la eliminacion de un dato
-    @Override
-    public void delete(usuario entity) {
-        usuarioRepository.delete(entity);
-        
-    }
+    
 
     @Override
     public void deleteAll() {
@@ -136,11 +156,7 @@ public class UsuarioService implements UsuarioRepository{
         
     }
 
-    //Metodo modificado | Sirve para hacer una eliminacion por ID
-    @Override
-    public void deleteById(Integer id) {
-        usuarioRepository.deleteAllById(null);        
-    }
+    
 
     @Override
     public boolean existsById(Integer id) {
@@ -154,11 +170,7 @@ public class UsuarioService implements UsuarioRepository{
         return Optional.empty();
     }
 
-    @Override
-    public <S extends usuario> S save(S entity) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+   
 
     @Override
     public List<usuario> findAll(Sort sort) {

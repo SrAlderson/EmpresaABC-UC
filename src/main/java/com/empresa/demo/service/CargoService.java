@@ -1,5 +1,6 @@
 package com.empresa.demo.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
@@ -20,6 +21,28 @@ public class CargoService implements CargoRepository {
     
     @Autowired
     private CargoRepository cargoRepository;
+
+
+    //------------------------------- Metodos modificados ---------------------------------------------
+    @Override
+    public List<cargo> findAll() {
+        
+        return cargoRepository.findAll();
+    }
+
+    public List<cargo> findAllByCargoID(int id){
+        List<cargo> cargoRespuesta= new ArrayList<>();
+        List<cargo> car = cargoRepository.findAll();
+
+        for (int i=0; i<car.size(); i++){
+            if(car.get(i).getIdCargo()==id){
+                cargoRespuesta.add(car.get(i));
+            }
+        }
+        return cargoRespuesta;
+    }
+
+    //------------------------------- Metodos no modificados ------------------------------------------
 
     @Override
     public void deleteAllByIdInBatch(Iterable<Integer> ids) {
@@ -87,12 +110,7 @@ public class CargoService implements CargoRepository {
         return null;
     }
 
-    //Metodo Modificado
-    @Override
-    public List<cargo> findAll() {
-        
-        return cargoRepository.findAll();
-    }
+    
 
     @Override
     public List<cargo> findAllById(Iterable<Integer> ids) {
