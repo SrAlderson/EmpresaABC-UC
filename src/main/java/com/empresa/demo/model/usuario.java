@@ -15,6 +15,7 @@ public class usuario {
     //Atributos del usuario
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Esto con el fin de poder realizar de manera automatica la asignacion de un ID
+
     private int usu_id; 
     private String usu_primerNombre;                                                                    
     private String usu_segundoNombre;

@@ -11,9 +11,9 @@ import jakarta.persistence.Table;
 //Librerias para la base de datos
 
 @Entity
-@Table(name="cargoPerfil")
+@Table(name="cargoperfil")
 
-public class cargoPerfil {
+public class cargoperfil {
     
     //Atributos del usuario
     @Id
@@ -34,7 +34,7 @@ public class cargoPerfil {
     private cargo cargo;
 
     //Creacion del metodo constructor
-    public cargoPerfil (int idCPE, String p_nombre, String c_nombre, perfil perfil, cargo cargo){
+    public cargoperfil (int idCPE, String p_nombre, String c_nombre, perfil perfil, cargo cargo){
         super();
         this.idCPE = idCPE;
         this.c_nombre = c_nombre;

@@ -28,7 +28,7 @@ public class colaborador {
     //Creacion de la conexion de la tala <cargo_perfil - perfil>
     @ManyToOne
     @JoinColumn
-    private cargoPerfil cargoPerfil;
+    private cargoperfil cargoperfil;
 
     //Creacion de la conexion de la tala <cargo_perfil - perfil>
     @ManyToOne
@@ -36,7 +36,7 @@ public class colaborador {
     private usuario usuario;
 
     //Creacion del metodo constructor
-    public colaborador(int colab_id, int usu_cedula, int idCPE, String colab_correo, String colab_usuario, cargoPerfil cargoPerfil, usuario usuario){
+    public colaborador(int colab_id, int usu_cedula, int idCPE, String colab_correo, String colab_usuario, cargoperfil cargoperfil, usuario usuario){
         super();
         this.colab_id = colab_id;
         this.usu_cedula = usu_cedula;
@@ -44,7 +44,7 @@ public class colaborador {
         this.colab_correo = colab_correo;
         this.colab_usuario = colab_usuario;
         this.usuario = usuario;
-        this.cargoPerfil = cargoPerfil;
+        this.cargoperfil = cargoperfil;
     }
 
     //Creacion de los metodos Get y Set
@@ -68,8 +68,8 @@ public class colaborador {
     public usuario usuario (){
         return usuario;
     }
-    public cargoPerfil cargoPerfil (){
-        return cargoPerfil;
+    public cargoperfil cargoPerfil (){
+        return cargoperfil;
     }
 
     //Setters
@@ -91,7 +91,7 @@ public class colaborador {
     public void setUsuario1 (usuario usuario){
         this.usuario =usuario;
     }
-    public void setCargoPerfil(cargoPerfil cargoPerfil){
-        this.cargoPerfil = cargoPerfil;
+    public void setCargoPerfil(cargoperfil cargoperfil){
+        this.cargoperfil = cargoperfil;
     }
 }
